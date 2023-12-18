@@ -6,11 +6,11 @@
 /public/out-tsc
 # Only exists if Bazel was run
 /public/bazel-out
-/public/.angular/cache
+/public/.angular
 /public/node_modules
 
 
-.angular/*
+
 
 # dependencies
 /node_modules
