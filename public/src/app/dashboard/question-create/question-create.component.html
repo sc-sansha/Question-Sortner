@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSaveQuestion()" *ngIf="!isLoading">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="title"
+        placeholder="Question Title"
+      />
+      <mat-error *ngIf="form.get('title')?.invalid"
+        >Please enter a Question title.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="6"
+        formControlName="description"
+        placeholder="Question Description"
+      ></textarea>
+      <mat-error *ngIf="form.get('description')?.invalid"
+        >Please enter a Question Description.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select Difficulty:</mat-label>
+      <mat-select formControlName="difficulty">
+        <mat-option value="easy">Easy</mat-option>
+        <mat-option value="medium">Medium</mat-option>
+        <mat-option value="hard">Hard</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Create Question</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+
+<!-- using template ref for input -->
+<!-- <textarea rows="6" [value]="newPost" #postInput></textarea>
+<hr>
+<button (click)="onAddPost(postInput)">Save Post</button>
+<p>{{newPost}}</p> -->

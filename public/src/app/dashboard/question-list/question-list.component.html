@@ -1,0 +1,43 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+
+<mat-toolbar>
+  <section class="checkbox-section">
+  <h4>Select Difficulty:</h4>
+  <span class="options">
+    <mat-checkbox *ngFor="let option of options" [(ngModel)]="selectedOptions[option]" (change)="onCheckboxChange(option)">
+  {{ option }}
+</mat-checkbox>
+  </span>
+</section>
+
+</mat-toolbar>
+
+<mat-accordion multi="true" *ngIf="questionsList.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let question of questionsList">
+    <mat-expansion-panel-header>
+      {{question.title}}
+    </mat-expansion-panel-header>
+    <p>{{question.description}}</p>
+    <mat-action-row>
+      <button mat-button disabled>
+        {{question.difficulty}}
+      </button>
+    </mat-action-row>
+    <!-- <mat-action-row>
+      <a mat-button color="accent">EDIT</a>
+      <button mat-button color="warn" >
+        DELETE
+      </button>
+    </mat-action-row> -->
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-paginator
+  [length]="totalQuestions"
+  [pageSizeOptions]="pageSizeOptions"
+  [pageSize]="questionsPerPage"
+  (page)="onChangedPage($event)"
+  *ngIf="questionsList.length > 0"
+></mat-paginator>
+<p class="info-text mat-body-1" *ngIf="questionsList.length <= 0 && !isLoading">
+  No Questions yet!
+</p>

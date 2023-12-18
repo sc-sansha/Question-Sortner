@@ -1,0 +1,89 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/public/tmp
+/public/out-tsc
+# Only exists if Bazel was run
+/public/bazel-out
+/public/.angular/cache
+/public/node_modules
+
+
+.angular/*
+
+# dependencies
+/node_modules
+/public/node_modules
+/certificate
+
+
+# profiling files
+/public/chrome-profiler-events.json
+/public/speed-measure-plugin.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+/public/npm-debug.log
+/public/yarn-error.log
+/public/testem.log
+/public/.angular/cache
+/public/.vscode
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+app/*.d.ts
+app/*.js
+app/*.js.map
+
+app/config/*.d.ts
+app/config/*.js
+app/config/*.js.map
+
+server/**/*.d.ts
+server/**/*.js
+server/**/*.js.map
+
+server/uploads
+
+server/**/**/*.d.ts
+server/**/**/*.js
+server/**/**/*.js.map
+server/dbLayer/connectionManager/ssl
+index.d.ts
+index.js
+index.js.map
+
+Dockerfile
+userUploadExcel
+userUploadExcels
+userUploadPdf
+
+# Add JWT initializeJWTTokeninDB.js
+/bin/mongoScripts/initializeJwtTokenInDB.js
+
+# Runtime files
+runtime
